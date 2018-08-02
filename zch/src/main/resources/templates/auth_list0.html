@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+    <meta charset="UTF-8">
+    <title>权限列表</title>
+    <script type="text/javascript">
+        function doAdd() {
+//            $.ajax({
+//                url: "/login",
+//                async: false,
+//                data: {loginid: $("#loginid").val(), password: $("#password").val()},
+//                type: "POST",
+//                success: function (msg) {
+//                    if(msg == "success"){
+//                        alert(msg);
+//                    }
+//
+//                }
+//            });
+        }
+    </script>
+</head>
+<body>
+<table>
+    <tr>
+        <th>权限名</th>
+        <th>权限描述</th>
+    </tr>
+    <tr th:each="authority : ${authority_list}">
+        <td th:text="${authority.authorityName}"></td>
+        <td th:text="${authority.authorityEntranceDesc}"></td>
+    </tr>
+    <tr>
+        <th></th>
+        <th></th>
+    </tr>
+    <tr>
+        <th colspan="2"><button onclick="doAdd()">新增权限</button></th>
+    </tr>
+</table>
+
+</body>
+</html>
